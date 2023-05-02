@@ -1,0 +1,23 @@
+{
+  "name": "rest-countries-api",
+  "version": "1.0.0",
+  "description": "Integrating with the REST Countries API to pull countries data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesardmn/rest-countries-api.git"
+  },
+  "keywords": [],
+  "author": "Cesar Dimi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cesardmn/rest-countries-api/issues"
+  },
+  "homepage": "https://github.com/cesardmn/rest-countries-api#readme",
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}
