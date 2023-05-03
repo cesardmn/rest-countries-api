@@ -20,7 +20,7 @@
 :root .light {
   --primary-text: var(--blue-bolder);
   --bg: var(--grey-normal);
-  --box: var(--grey-lighter);
+  --box: var(--grey-normal);
   --nav-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -85,7 +85,4 @@ main {
   gap: 1rem;
   font-weight: bold;
   cursor: pointer;
-}
-.theme-toggle-container:hover {
-  background-color: var(--grey-normal);
 }
