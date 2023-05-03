@@ -12,6 +12,7 @@
 
 :root .dark {
   --primary-text: var(--grey-lighter);
+  --placeholder-text: var(--grey-lighter);
   --bg: var(--blue-normal);
   --box: var(--blue-lighter);
   --nav-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -19,6 +20,7 @@
 
 :root .light {
   --primary-text: var(--blue-bolder);
+  --placeholder-text: ;
   --bg: var(--grey-normal);
   --box: var(--grey-normal);
   --nav-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -54,6 +56,7 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   width: 100%;
   height: 100%;
   overflow: scroll;
@@ -61,28 +64,8 @@ main {
   background-color: var(--bg);
 }
 
-.hero {
-  height: 8rem;
-  padding: 0 1rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: var(--nav-shadow);
-  background-color: var(--box);
-}
-
-.hero .title {
-  font-weight: 900;
-}
-
-.theme-toggle-container {
+.container {
   height: 100%;
-  width: 40%;
-  align-items: center;
-  justify-content: flex-end;
-  display: flex;
-  gap: 1rem;
-  font-weight: bold;
-  cursor: pointer;
+  width: 100%;
+  padding: 0 1rem;
 }

@@ -3,7 +3,8 @@ import { Nunito } from 'next/font/google'
 
 import { useToggleTheme } from '@providers/ToggleThemeProvider'
 
-import Navbar from '@components/Navbar'
+import Navbar from '@src/components/Navbar'
+import SearchBox from '@src/components/SearchBox'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -20,6 +21,9 @@ export default function Home() {
       </Head>
       <main className={`${nunito.className}  ${toggleTheme}`}>
         <Navbar />
+        <div className="container">
+          <SearchBox />
+        </div>
       </main>
     </>
   )
