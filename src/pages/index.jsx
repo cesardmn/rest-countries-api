@@ -5,6 +5,7 @@ import { useToggleTheme } from '@providers/ToggleThemeProvider'
 
 import Navbar from '@src/components/Navbar'
 import SearchBox from '@src/components/SearchBox'
+import CountryCard from '@src/components/CountryCard'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -24,15 +25,9 @@ export default function Home({ countries }) {
         <SearchBox />
         <div className="container">
           <ul>
-            {countries.map((country, index) => {
+            {countries.map(country => {
               return (
-                <li key={index}>
-                  <img src={country.flags.png} alt="country flag" />
-                  <h3>{country.name.common}</h3>
-                  <p>population: {country.population}</p>
-                  <p>region: {country.region}</p>
-                  <p>capital: {country.capital}</p>
-                </li>
+                <CountryCard key={country.name.common} country={country}/>
               )
             })}
           </ul>
