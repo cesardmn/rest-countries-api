@@ -8,7 +8,7 @@ import SearchBox from '@src/components/SearchBox'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({ countries }) {
   const { toggleTheme } = useToggleTheme()
 
   return (
@@ -21,10 +21,31 @@ export default function Home() {
       </Head>
       <main className={`${nunito.className}  ${toggleTheme}`}>
         <Navbar />
+        <SearchBox />
         <div className="container">
-          <SearchBox />
+          <ul>
+            {countries.map((country, index) => {
+              return (
+                <li key={index}>
+                  <img src={country.flags.png} alt="country flag" />
+                  <h3>{country.name.common}</h3>
+                  <p>population: {country.population}</p>
+                  <p>region: {country.region}</p>
+                  <p>capital: {country.capital}</p>
+                </li>
+              )
+            })}
+          </ul>
         </div>
       </main>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(
+    `https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags`
+  )
+  const countries = await res.json()
+  return { props: { countries } }
 }

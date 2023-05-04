@@ -18,7 +18,6 @@
   outline: transparent;
   border: transparent;
   color: var(--placeholder-text);
-  /* border: 1px solid white; */
 }
 
 .searchInput::placeholder {
