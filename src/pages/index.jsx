@@ -16,6 +16,10 @@ export default function Home({ countries }) {
     return countries.filter((country) => country.region === region)
   }
 
+  const filerName = (name) => {
+    return countries.filter((country) => country.name.common.includes(name))
+  }
+
   const regionFilter = fiterByRegion('Americas')
 
   return (
