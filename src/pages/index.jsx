@@ -12,6 +12,12 @@ const nunito = Nunito({ subsets: ['latin'] })
 export default function Home({ countries }) {
   const { toggleTheme } = useToggleTheme()
 
+  const fiterByRegion = (region) => {
+    return countries.filter((country) => country.region === region)
+  }
+
+  const regionFilter = fiterByRegion('Americas')
+
   return (
     <>
       <Head>
@@ -23,12 +29,10 @@ export default function Home({ countries }) {
       <main className={`${nunito.className}  ${toggleTheme}`}>
         <Navbar />
         <SearchBox />
-        <div className="container">
-          <ul>
-            {countries.map(country => {
-              return (
-                <CountryCard key={country.name.common} country={country}/>
-              )
+        <div>
+          <ul className="container">
+            {regionFilter.map((country) => {
+              return <CountryCard key={country.name.common} country={country} />
             })}
           </ul>
         </div>
