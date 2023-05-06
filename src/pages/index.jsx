@@ -33,13 +33,11 @@ export default function Home({ countries }) {
       <main className={`${nunito.className}  ${toggleTheme}`}>
         <Navbar />
         <SearchBox />
-        <div>
           <ul className="container">
             {regionFilter.map((country) => {
               return <CountryCard key={country.name.common} country={country} />
             })}
           </ul>
-        </div>
       </main>
     </>
   )

@@ -46,6 +46,10 @@ body {
   width: 100%;
 }
 
+li {
+  list-style: none;
+}
+
 #__next {
   height: inherit;
   width: inherit;
@@ -65,7 +69,7 @@ main {
 }
 
 .container {
-  height: 100%;
+  height: 70%;
   width: 100%;
   padding: 0 1rem;
   overflow: scroll;
