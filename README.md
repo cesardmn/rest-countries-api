@@ -3,8 +3,7 @@
 Integrating with the REST Countries API to pull countries data.
 
 - [x] See all countries from the API on the homepage.
-- [ ] Search for a country using an input field.
-    [x] Create function to filter using an input field.
+- [x] Search for a country using an input field.
 - [ ] Filter countries by region.
     [x] Create function to filter by region function.
 - [ ] Click on a country to see more detailed information on a separate page.

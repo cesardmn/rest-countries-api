@@ -6,6 +6,7 @@ import { useToggleTheme } from '@providers/ToggleThemeProvider'
 import Navbar from '@src/components/Navbar'
 import SearchBox from '@src/components/SearchBox'
 import CountryCard from '@src/components/CountryCard'
+import { useFilter } from '@src/providers/FilterProvider'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -22,6 +23,16 @@ export default function Home({ countries }) {
 
   const regionFilter = fiterByRegion('Americas')
 
+  const { filter } = useFilter()
+
+  let show = countries
+
+  if (filter.type === 'name') {
+    show = countries.filter((country) =>
+      country.name.common.toLowerCase().includes(filter.name.toLowerCase())
+    )
+  }
+
   return (
     <>
       <Head>
@@ -33,11 +44,11 @@ export default function Home({ countries }) {
       <main className={`${nunito.className}  ${toggleTheme}`}>
         <Navbar />
         <SearchBox />
-          <ul className="container">
-            {regionFilter.map((country) => {
-              return <CountryCard key={country.name.common} country={country} />
-            })}
-          </ul>
+        <ul className="container">
+          {show.map((country) => {
+            return <CountryCard key={country.name.common} country={country} />
+          })}
+        </ul>
       </main>
     </>
   )
