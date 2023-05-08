@@ -43,9 +43,7 @@ export default function Detail() {
 
   return (
     <div className="detail">
-      <Link href="/">
-        back
-      </Link>
+      <Link href="/">back</Link>
 
       <div className="card">
         {data.flags?.png && (

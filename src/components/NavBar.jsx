@@ -4,8 +4,7 @@ import { useToggleTheme } from '@providers/ToggleThemeProvider'
 
 import styles from '@src/styles/NavBar.module.css'
 
-
-const {hero, title, themeToggleContainer} = styles
+const { hero, title, themeToggleContainer } = styles
 
 export default function Navbar() {
   const { setToggleTheme } = useToggleTheme()

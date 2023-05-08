@@ -1,10 +1,13 @@
 import { useRef } from 'react'
-import styles from '@components/SearchBox/SearchBox.module.css'
 import { HiSearch } from 'react-icons/hi'
 
 import { useFilter } from '@src/providers/FilterProvider'
 
-export default function SearchBox() {
+import styles from '@src/styles/SearchBar.module.css'
+
+const { filterhWraper, searchWraper, icon, select } = styles
+
+export default function SearchBar() {
   const { setFilter } = useFilter()
 
   const inputRef = useRef()
@@ -23,14 +26,13 @@ export default function SearchBox() {
   }
 
   return (
-    <div className={styles.searchContainer}>
-      <div className={styles.searchBox}>
-        <HiSearch className={styles.searchIcon} />
+    <div className={filterhWraper}>
+      <div className={searchWraper}>
+        <HiSearch className={icon} />
         <input
           type="search"
           name="search"
           id="search"
-          className={styles.searchInput}
           placeholder="Search for a country..."
           ref={inputRef}
           onChange={(e) => {
@@ -42,11 +44,11 @@ export default function SearchBox() {
       <select
         name=""
         id=""
-        className={styles.select}
         ref={selectRef}
         onChange={(e) => {
           handleInput(e)
         }}
+        className={select}
       >
         <option value="">All Regions</option>
         <option value="Africa">Africa</option>

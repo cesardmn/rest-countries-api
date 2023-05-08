@@ -22,7 +22,7 @@
   --primary-text: var(--blue-bolder);
   --placeholder-text: var(--grey-bolder);
   --bg: var(--grey-normal);
-  --box: var(--grey-normal);
+  --box: var(--grey-lighter);
   --nav-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
