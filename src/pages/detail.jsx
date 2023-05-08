@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 export default function Detail() {
   const [data, setData] = useState([])
@@ -41,47 +42,53 @@ export default function Detail() {
   const borders = data.borders || []
 
   return (
-    <div className="card">
-      {data.flags?.png && (
-        <>
-          <img src={data.flags.png} alt={data.flags.alt} />
-          <h3>{data.name.common}</h3>
+    <div className="detail">
+      <Link href="/">
+        back
+      </Link>
 
-          <span className="field">native name: </span>
+      <div className="card">
+        {data.flags?.png && (
+          <>
+            <img src={data.flags.png} alt={data.flags.alt} />
+            <h3>{data.name.common}</h3>
 
-          {data.name.nativeName[Object.keys(data.name.nativeName)[0]].common}
+            <span className="field">native name: </span>
 
-          <span className="field">population: </span>
-          {data.population}
+            {data.name.nativeName[Object.keys(data.name.nativeName)[0]].common}
 
-          <span className="field">sub region: </span>
-          {data.subregion}
+            <span className="field">population: </span>
+            {data.population}
 
-          <span className="field">capital: </span>
-          {data.capital}
+            <span className="field">sub region: </span>
+            {data.subregion}
 
-          <span className="field">top level domain: </span>
-          {data.cca2}
+            <span className="field">capital: </span>
+            {data.capital}
 
-          <span className="field">currency: </span>
-          {data.currencies[Object.keys(data.currencies)[0]].name}
+            <span className="field">top level domain: </span>
+            {data.cca2}
 
-          <span className="field">languages: </span>
-          {data.languages[Object.keys(data.languages)[0]]}
+            <span className="field">currency: </span>
+            {data.currencies[Object.keys(data.currencies)[0]].name}
 
-          <p>
-            <span className="field">borders: </span>
-            {borders.map((border) => (
-              <a
-                key={border}
-                href={`./detail?&country_name=${bordersData[border]?.name?.common}`}
-              >
-                {bordersData[border]?.name?.common || 'Loading...'}
-              </a>
-            ))}
-          </p>
-        </>
-      )}
+            <span className="field">languages: </span>
+            {data.languages[Object.keys(data.languages)[0]]}
+
+            <p>
+              <span className="field">borders: </span>
+              {borders.map((border) => (
+                <a
+                  key={border}
+                  href={`./detail?&country_name=${bordersData[border]?.name?.common}`}
+                >
+                  {bordersData[border]?.name?.common || 'Loading...'}
+                </a>
+              ))}
+            </p>
+          </>
+        )}
+      </div>
     </div>
   )
 }
