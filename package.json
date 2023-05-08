@@ -13,7 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/cesardmn/rest-countries-api.git"
   },
-  "keywords": ["NextJs", "React", "API", "Frontendmentor"],
+  "keywords": [
+    "NextJs",
+    "React",
+    "API",
+    "Frontendmentor"
+  ],
   "author": "Cesar Dimi",
   "license": "ISC",
   "bugs": {
@@ -23,7 +28,8 @@
   "dependencies": {
     "next": "13.3.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0"
   },
   "devDependencies": {
     "prettier": "^2.8.8"
