@@ -6,7 +6,7 @@ const { card, informations, flag, field } = styles
 export default function CountryCard({ country }) {
   return (
     <Link
-      href={`http://localhost:3000/detail?&country_name=` + country.name.common}
+      href={`./detail?&country_name=` + country.name.common}
     >
       <li key={country.name.common} className={card}>
         <div className={flag}>

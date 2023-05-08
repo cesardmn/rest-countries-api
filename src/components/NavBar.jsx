@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react'
 import { IoMoon, IoMoonOutline } from 'react-icons/io5'
 import { useToggleTheme } from '@providers/ToggleThemeProvider'
 
-import styles from '@components/Navbar/Navbar.module.css'
+import styles from '@src/styles/NavBar.module.css'
+
+
+const {hero, title, themeToggleContainer} = styles
 
 export default function Navbar() {
   const { setToggleTheme } = useToggleTheme()

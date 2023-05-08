@@ -1,0 +1,29 @@
+.layout {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 12fr 83fr 5fr;
+  background-color: var(--bg);
+  color: var(--primary-text);
+}
+
+.header,
+.main,
+.footer {
+  height: 100%;
+  width: 100%;
+}
+
+.header, .footer {
+  background-color: var(--box);
+  box-shadow: var(--nav-shadow);
+}
+
+.footer {
+  font-size: smaller;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-bolder);
+}

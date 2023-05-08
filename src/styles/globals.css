@@ -12,7 +12,7 @@
 
 :root .dark {
   --primary-text: var(--grey-lighter);
-  --placeholder-text: var(--grey-lighter);
+  --placeholder-text: var(--grey-normal);
   --bg: var(--blue-normal);
   --box: var(--blue-lighter);
   --nav-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -64,21 +64,6 @@ a {
 main {
   position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
   width: 100%;
   height: 100%;
-  overflow: scroll;
-  color: var(--primary-text);
-  background-color: var(--bg);
-}
-
-.container {
-  height: 70%;
-  width: 100%;
-  padding: 0 1rem;
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
