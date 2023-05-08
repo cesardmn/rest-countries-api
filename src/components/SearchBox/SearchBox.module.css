@@ -20,11 +20,13 @@
   border-radius: 8px;
   box-shadow: var(--nav-shadow);
   gap: 1.5rem;
+  padding: 0.5rem;
 }
 
 .searchInput {
   height: 100%;
   width: 95%;
+  padding: 0.5rem;
   display: flex;
   background-color: transparent;
   outline: transparent;
@@ -56,6 +58,11 @@
 .select {
   height: 100%;
   width: 60%;
-  border: transparent;
+  background-color: var(--box);
   outline: transparent;
+  border: transparent;
+  color: var(--placeholder-text);
+  border-radius: 8px;
+  box-shadow: var(--nav-shadow);
+  padding: 0.5rem;
 }
