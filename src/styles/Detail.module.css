@@ -1,7 +1,9 @@
 .details {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
+  max-width: 600px;
   height: 100%;
   gap: 2rem;
 }
@@ -31,12 +33,12 @@
 .flag {
   width: 100%;
   height: auto;
-  max-width: 100%;
+  max-width: 400px;
 }
 
 .flag img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
 }
 
@@ -53,4 +55,13 @@
 
 .field {
   font-weight: bolder;
+}
+
+.bordersStyle {
+  margin-top: 1rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }

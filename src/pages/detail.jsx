@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '@src/components/Layout'
 
 import styles from '@src/styles/Detail.module.css'
-const { details, card, title, link, flag, fieldWraper, field } = styles
+const { details, card, title, link, flag, fieldWraper, field, bordersStyle } = styles
 
 export default function Detail() {
   const [data, setData] = useState([])
@@ -101,6 +101,8 @@ export default function Detail() {
 
               <div className={fieldWraper}>
                 <span className={field}>borders: </span>
+              </div>
+              <div className={bordersStyle}>
                 {borders.map((border) => (
                   <Link
                     className={link}

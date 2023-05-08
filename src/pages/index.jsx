@@ -53,7 +53,7 @@ export default function Home({ countries }) {
       </Head>
       <Layout>
         <SearchBar />
-        <ul>
+        <ul className='cardGrid' >
           {show.map((country) => {
             return <CountryCard key={country.name.common} country={country} />
           })}

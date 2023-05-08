@@ -67,3 +67,37 @@ main {
   width: 100%;
   height: 100%;
 }
+
+.cardGrid {
+  margin-top: 3rem;
+}
+
+
+
+
+@media only screen and (min-width: 616px){
+  .cardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
+
+
+
+@media only screen and (min-width: 1047px){
+  .cardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
+
+
+@media only screen and (min-width: 1240px){
+  .cardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
