@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import styles from '@components/SearchBox/SearchBox.module.css'
 import { HiSearch } from 'react-icons/hi'
 
@@ -6,18 +7,19 @@ import { useFilter } from '@src/providers/FilterProvider'
 export default function SearchBox() {
   const { setFilter } = useFilter()
 
-  const handleInput = (e) => {
-    const input = e.target.value
+  const inputRef = useRef()
+  const selectRef = useRef()
 
-    if (input === '') {
-      setFilter('')
-    } else {
-      const filter = encodeURIComponent(input)
-      setFilter({
-        type: 'name',
-        name: input,
-      })
-    }
+  const handleInput = (e) => {
+    const input = inputRef.current.value
+    const select = selectRef.current.value
+
+    console.log(input, select)
+
+    setFilter({
+      name: input.toLowerCase(),
+      region: select.toLowerCase(),
+    })
   }
 
   return (
@@ -30,13 +32,23 @@ export default function SearchBox() {
           id="search"
           className={styles.searchInput}
           placeholder="Search for a country..."
+          ref={inputRef}
           onChange={(e) => {
             handleInput(e)
           }}
         />
       </div>
 
-      <select name="" id="" className={styles.select}>
+      <select
+        name=""
+        id=""
+        className={styles.select}
+        ref={selectRef}
+        onChange={(e) => {
+          handleInput(e)
+        }}
+      >
+        <option value="">All Regions</option>
         <option value="Africa">Africa</option>
         <option value="Americas">America</option>
         <option value="Asia">Asia</option>

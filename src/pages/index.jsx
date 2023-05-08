@@ -7,31 +7,46 @@ import Navbar from '@src/components/Navbar'
 import SearchBox from '@src/components/SearchBox'
 import CountryCard from '@src/components/CountryCard'
 import { useFilter } from '@src/providers/FilterProvider'
+import { useEffect, useState } from 'react'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
 export default function Home({ countries }) {
   const { toggleTheme } = useToggleTheme()
-
-  const fiterByRegion = (region) => {
-    return countries.filter((country) => country.region === region)
-  }
-
-  const filerName = (name) => {
-    return countries.filter((country) => country.name.common.includes(name))
-  }
-
-  const regionFilter = fiterByRegion('Americas')
-
   const { filter } = useFilter()
+  const [show, setShow] = useState(countries)
 
-  let show = countries
+  useEffect(() => {
+    if (filter.name === '' && filter.region === '') {
+      setShow(countries)
+    }
 
-  if (filter.type === 'name') {
-    show = countries.filter((country) =>
-      country.name.common.toLowerCase().includes(filter.name.toLowerCase())
-    )
-  }
+    if (filter.name !== '' && filter.region !== '') {
+      setShow(
+        countries.filter(
+          (country) =>
+            country.region.toLowerCase().includes(filter.region) &&
+            country.name.common.toLowerCase().includes(filter.name)
+        )
+      )
+    }
+
+    if (filter.name === '' && filter.region !== '') {
+      setShow(
+        countries.filter((country) =>
+          country.region.toLowerCase().includes(filter.region)
+        )
+      )
+    }
+
+    if (filter.name !== '' && filter.region === '') {
+      setShow(
+        countries.filter((country) =>
+          country.name.common.toLowerCase().includes(filter.name)
+        )
+      )
+    }
+  }, [filter])
 
   return (
     <>

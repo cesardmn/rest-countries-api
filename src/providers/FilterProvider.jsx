@@ -3,7 +3,10 @@ import { createContext, useContext, useState } from 'react'
 export const FilterContext = createContext({})
 
 export const FilterProvider = (props) => {
-  const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useState({
+    name: '',
+    region: '',
+  })
 
   return (
     <FilterContext.Provider
