@@ -27,8 +27,10 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 10fr 90fr;
-  padding: 2rem;
+  padding: 0 2rem;
+  padding-top: 2rem;
   overflow: scroll;
+  -ms-grid-column-align: center;
 }
 
 .footer {

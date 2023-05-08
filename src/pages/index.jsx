@@ -1,17 +1,13 @@
 import Head from 'next/head'
 import { Nunito } from 'next/font/google'
 
-import { useToggleTheme } from '@providers/ToggleThemeProvider'
 import CountryCard from '@src/components/CountryCard'
 import Layout from '@src/components/Layout'
 import { useFilter } from '@src/providers/FilterProvider'
 import { useEffect, useState } from 'react'
 import SearchBar from '@src/components/SearchBar'
 
-const nunito = Nunito({ subsets: ['latin'] })
-
 export default function Home({ countries }) {
-  const { toggleTheme } = useToggleTheme()
   const { filter } = useFilter()
   const [show, setShow] = useState(countries)
 
@@ -55,16 +51,14 @@ export default function Home({ countries }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${nunito.className}  ${toggleTheme}`}>
-        <Layout>
-          <SearchBar />
-          <ul>
-            {show.map((country) => {
-              return <CountryCard key={country.name.common} country={country} />
-            })}
-          </ul>
-        </Layout>
-      </main>
+      <Layout>
+        <SearchBar />
+        <ul>
+          {show.map((country) => {
+            return <CountryCard key={country.name.common} country={country} />
+          })}
+        </ul>
+      </Layout>
     </>
   )
 }

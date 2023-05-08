@@ -1,6 +1,10 @@
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Layout from '@src/components/Layout'
+
+import styles from '@src/styles/Detail.module.css'
+const { details, card, title, link, flag, fieldWraper, field } = styles
 
 export default function Detail() {
   const [data, setData] = useState([])
@@ -42,51 +46,75 @@ export default function Detail() {
   const borders = data.borders || []
 
   return (
-    <div className="detail">
-      <Link href="/">back</Link>
+    <Layout>
+      <div className={details}>
+        <Link href="/" className={link}>
+          back
+        </Link>
 
-      <div className="card">
-        {data.flags?.png && (
-          <>
-            <img src={data.flags.png} alt={data.flags.alt} />
-            <h3>{data.name.common}</h3>
+        <div className={card}>
+          {data.flags?.png && (
+            <>
+              <div className={flag}>
+                <img src={data.flags.png} alt={data.flags.alt} />
+              </div>
 
-            <span className="field">native name: </span>
+              <h3 className={title}>{data.name.common}</h3>
 
-            {data.name.nativeName[Object.keys(data.name.nativeName)[0]].common}
+              <div className={fieldWraper}>
+                <span className={field}>native name: </span>
 
-            <span className="field">population: </span>
-            {data.population}
+                {
+                  data.name.nativeName[Object.keys(data.name.nativeName)[0]]
+                    .common
+                }
+              </div>
+              <div className={fieldWraper}>
+                <span className={field}>population: </span>
+                {data.population}
+              </div>
 
-            <span className="field">sub region: </span>
-            {data.subregion}
+              <div className={fieldWraper}>
+                <span className={field}>sub region: </span>
+                {data.subregion}
+              </div>
 
-            <span className="field">capital: </span>
-            {data.capital}
+              <div className={fieldWraper}>
+                <span className={field}>capital: </span>
+                {data.capital}
+              </div>
 
-            <span className="field">top level domain: </span>
-            {data.cca2}
+              <div className={fieldWraper}>
+                <span className={field}>top level domain: </span>
+                {data.cca2}
+              </div>
 
-            <span className="field">currency: </span>
-            {data.currencies[Object.keys(data.currencies)[0]].name}
+              <div className={fieldWraper}>
+                <span className={field}>currency: </span>
+                {data.currencies[Object.keys(data.currencies)[0]].name}
+              </div>
 
-            <span className="field">languages: </span>
-            {data.languages[Object.keys(data.languages)[0]]}
+              <div className={fieldWraper}>
+                <span className={field}>languages: </span>
+                {data.languages[Object.keys(data.languages)[0]]}
+              </div>
 
-            <p>
-              <span className="field">borders: </span>
-              {borders.map((border) => (
-                <a
-                  key={border}
-                  href={`./detail?&country_name=${bordersData[border]?.name?.common}`}
-                >
-                  {bordersData[border]?.name?.common || 'Loading...'}
-                </a>
-              ))}
-            </p>
-          </>
-        )}
+              <div className={fieldWraper}>
+                <span className={field}>borders: </span>
+                {borders.map((border) => (
+                  <Link
+                    className={link}
+                    key={border}
+                    href={`./detail?&country_name=${bordersData[border]?.name?.common}`}
+                  >
+                    {bordersData[border]?.name?.common || 'Loading...'}
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
