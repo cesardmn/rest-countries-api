@@ -21,6 +21,11 @@
   box-shadow: var(--nav-shadow);
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+}
+
 .main {
   height: 100%;
   width: 100%;
@@ -30,7 +35,14 @@
   padding: 0 2rem;
   padding-top: 2rem;
   overflow: scroll;
-  -ms-grid-column-align: center;
+  align-self: center;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  max-width: 1560px;
+  margin: auto;
 }
 
 .footer {

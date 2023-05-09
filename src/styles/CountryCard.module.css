@@ -1,32 +1,36 @@
 .card {
-  height: 340px;
-  margin-top: 2rem;
+  min-height: 400px;
+  width: minmax(200px,350px);
+  margin-top: 1rem;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: var(--nav-shadow);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
 }
 
 .flag {
-  height: 50%;
+  height: 60%;
   width: 100%;
-  object-fit: cover;
-  overflow: hidden;
+  max-width: 100%;
 }
 
 .flag img {
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 .informations {
-  height: 50%;
+  height: 40%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
+  justify-content: flex-end;
+  padding: 2rem;
+  line-height: 2rem;
 }
 
 .field {

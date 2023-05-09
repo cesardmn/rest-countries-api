@@ -3,7 +3,7 @@ import Navbar from './NavBar'
 import { Nunito } from 'next/font/google'
 import { useToggleTheme } from '@providers/ToggleThemeProvider'
 
-const { layout, header, main, footer } = styles
+const { layout, header, main, footer, content } = styles
 
 const date = new Date().getFullYear()
 const nunito = Nunito({ subsets: ['latin'] })
@@ -16,7 +16,9 @@ export default function Layout(props) {
         <header className={header}>
           <Navbar />
         </header>
-        <main className={main}>{props.children}</main>
+        <main className={main}>
+          <div className={content}>{props.children}</div>
+        </main>
         <footer className={footer}>Copyright © Cesar Dimi - ${date}</footer>
       </div>
     </main>
