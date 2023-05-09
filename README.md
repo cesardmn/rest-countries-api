@@ -4,9 +4,13 @@
 
 ## preview
 - Home page
+
 ![home preview](./public/preview_home.gif)
 
+<br>
+
 - Detail page
+
 ![home preview](./public/preview_detail.gif)
 
 ## features
