@@ -34,8 +34,20 @@
   grid-template-rows: 10fr 90fr;
   padding: 0 2rem 2rem 2rem;
   padding-top: 2rem;
-  overflow: scroll;
+  overflow-y: scroll;
   align-self: center;
+}
+
+.main::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--bg);
+  box-shadow: var(--nav-shadow);
+}
+
+.main::-webkit-scrollbar-thumb {
+  background-color: var(--box);
+  height: 5rem;
+  border-radius: 4px; 
 }
 
 .content {
