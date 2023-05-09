@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import styles from '@styles/CountryCard.module.css'
 
-const { card, informations, flag, field } = styles
+const { card, informations, flag, field, link } = styles
 
 export default function CountryCard({ country }) {
   return (
-    <Link href={`./detail?&country_name=` + country.name.common}>
+    <Link
+      href={`./detail?&country_name=` + country.name.common}
+      className={link}
+    >
       <li key={country.name.common} className={card}>
         <div className={flag}>
           <img src={country.flags.png} alt={country.flags.alt} />

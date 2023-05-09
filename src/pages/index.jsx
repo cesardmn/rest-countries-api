@@ -9,7 +9,9 @@ import SearchBar from '@src/components/SearchBar'
 
 export default function Home({ countries }) {
   const { filter } = useFilter()
-  const [show, setShow] = useState(countries)
+  const [show, setShow] = useState(
+    countries.sort((a, b) => a.name.common.localeCompare(b.name.common))
+  )
 
   useEffect(() => {
     if (filter.name === '' && filter.region === '') {
@@ -53,7 +55,7 @@ export default function Home({ countries }) {
       </Head>
       <Layout>
         <SearchBar />
-        <ul className='cardGrid' >
+        <ul className="cardGrid">
           {show.map((country) => {
             return <CountryCard key={country.name.common} country={country} />
           })}

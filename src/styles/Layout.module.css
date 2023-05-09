@@ -32,7 +32,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 10fr 90fr;
-  padding: 0 2rem;
+  padding: 0 2rem 2rem 2rem;
   padding-top: 2rem;
   overflow: scroll;
   align-self: center;

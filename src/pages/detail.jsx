@@ -4,7 +4,8 @@ import Link from 'next/link'
 import Layout from '@src/components/Layout'
 
 import styles from '@src/styles/Detail.module.css'
-const { details, card, title, link, flag, fieldWraper, field, bordersStyle } = styles
+const { details, card, title, link, flag, fieldWraper, field, bordersStyle } =
+  styles
 
 export default function Detail() {
   const [data, setData] = useState([])

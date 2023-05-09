@@ -19,7 +19,7 @@ export default function Layout(props) {
         <main className={main}>
           <div className={content}>{props.children}</div>
         </main>
-        <footer className={footer}>Copyright © Cesar Dimi - ${date}</footer>
+        <footer className={footer}>Copyright © Cesar Dimi - {date}</footer>
       </div>
     </main>
   )

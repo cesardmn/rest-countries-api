@@ -70,13 +70,13 @@ main {
 }
 
 .cardGrid {
-  margin-top: 3rem;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-
-
-@media only screen and (min-width: 616px){
+@media only screen and (min-width: 616px) {
   .cardGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -84,9 +84,7 @@ main {
   }
 }
 
-
-
-@media only screen and (min-width: 1047px){
+@media only screen and (min-width: 1047px) {
   .cardGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -94,8 +92,7 @@ main {
   }
 }
 
-
-@media only screen and (min-width: 1240px){
+@media only screen and (min-width: 1240px) {
   .cardGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

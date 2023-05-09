@@ -1,6 +1,7 @@
 .card {
   min-height: 400px;
-  width: minmax(200px,350px);
+  min-width: 200px;
+  max-width: 350px;
   margin-top: 1rem;
   overflow: hidden;
   border-radius: 8px;
@@ -8,7 +9,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 }
 
 .flag {
