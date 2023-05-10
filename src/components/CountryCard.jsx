@@ -18,7 +18,9 @@ export default function CountryCard({ country }) {
           <h3>{country.name.common}</h3>
           <p>
             <span className={field}>population: </span>
-            {country.population}
+            {Intl.NumberFormat('en', { notation: 'compact' }).format(
+              country.divpopulation
+            )}
           </p>
           <p>
             <span className={field}>region: </span>

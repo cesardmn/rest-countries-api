@@ -1,12 +1,19 @@
 .hero {
   height: 100%;
   width: 100%;
-  min-width: 360px;
-  max-width: 1560px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  min-width: 300px;
+  max-width: 960px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0.5rem;
+  padding: 1.5rem;
 }
 
 .title {
@@ -16,6 +23,10 @@
 
 .themeToggleContainer {
   display: flex;
+  height: 100%;
+  width: 50%;
   gap: 0.5rem;
-  align-items: baseline;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
 }

@@ -4,7 +4,7 @@ import { useToggleTheme } from '@providers/ToggleThemeProvider'
 
 import styles from '@src/styles/NavBar.module.css'
 
-const { hero, title, themeToggleContainer } = styles
+const { hero, title, themeToggleContainer, container } = styles
 
 export default function Navbar() {
   const { setToggleTheme } = useToggleTheme()
@@ -32,11 +32,13 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className={styles.hero}>
-      <h3 className={styles.title}>Where in the World?</h3>
-      <div className={styles.themeToggleContainer} onClick={changeTheme}>
-        {isDark ? <IoMoon /> : <IoMoonOutline />}
-        <span>Dark Mode</span>
+    <nav className={hero}>
+      <div className={container}>
+        <h3 className={title}>Where in the World?</h3>
+        <div className={themeToggleContainer} onClick={changeTheme}>
+          {isDark ? <IoMoon /> : <IoMoonOutline />}
+          <span>Dark Mode</span>
+        </div>
       </div>
     </nav>
   )

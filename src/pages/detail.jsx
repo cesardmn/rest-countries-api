@@ -4,8 +4,20 @@ import Link from 'next/link'
 import Layout from '@src/components/Layout'
 
 import styles from '@src/styles/Detail.module.css'
-const { details, card, title, link, flag, fieldWraper, field, bordersStyle } =
-  styles
+const {
+  details,
+  card,
+  title,
+  link,
+  flag,
+  fieldWraper,
+  field,
+  bordersStyle,
+  informations,
+  information1,
+  information2,
+  bordersWraper,
+} = styles
 
 export default function Detail() {
   const [data, setData] = useState([])
@@ -50,7 +62,7 @@ export default function Detail() {
     <Layout>
       <div className={details}>
         <Link href="/" className={link}>
-          back
+          <button>back</button>
         </Link>
 
         <div className={card}>
@@ -60,59 +72,72 @@ export default function Detail() {
                 <img src={data.flags.png} alt={data.flags.alt} />
               </div>
 
-              <h3 className={title}>{data.name.common}</h3>
+              <div className={informations}>
+                <div className={information1}>
+                  <h3 className={title}>{data.name.common}</h3>
 
-              <div className={fieldWraper}>
-                <span className={field}>native name: </span>
+                  <div className={fieldWraper}>
+                    <span className={field}>native name: </span>
 
-                {
-                  data.name.nativeName[Object.keys(data.name.nativeName)[0]]
-                    .common
-                }
-              </div>
-              <div className={fieldWraper}>
-                <span className={field}>population: </span>
-                {data.population}
-              </div>
+                    {
+                      data.name.nativeName[Object.keys(data.name.nativeName)[0]]
+                        .common
+                    }
+                  </div>
+                  <div className={fieldWraper}>
+                    <span className={field}>population: </span>
+                    {Intl.NumberFormat('en', { notation: 'compact' }).format(
+                      data.population
+                    )}
+                  </div>
 
-              <div className={fieldWraper}>
-                <span className={field}>sub region: </span>
-                {data.subregion}
-              </div>
+                  <div className={fieldWraper}>
+                    <span className={field}>sub region: </span>
+                    {data.subregion}
+                  </div>
 
-              <div className={fieldWraper}>
-                <span className={field}>capital: </span>
-                {data.capital}
-              </div>
+                  <div className={fieldWraper}>
+                    <span className={field}>capital: </span>
+                    {data.capital}
+                  </div>
+                </div>
 
-              <div className={fieldWraper}>
-                <span className={field}>top level domain: </span>
-                {data.cca2}
-              </div>
+                <div className={information2}>
+                  <div className={fieldWraper}>
+                    <span className={field}>top level domain: </span>
+                    {data.cca2}
+                  </div>
 
-              <div className={fieldWraper}>
-                <span className={field}>currency: </span>
-                {data.currencies[Object.keys(data.currencies)[0]].name}
-              </div>
+                  <div className={fieldWraper}>
+                    <span className={field}>currency: </span>
+                    {data.currencies[Object.keys(data.currencies)[0]].name}
+                  </div>
 
-              <div className={fieldWraper}>
-                <span className={field}>languages: </span>
-                {data.languages[Object.keys(data.languages)[0]]}
-              </div>
+                  <div className={fieldWraper}>
+                    <span className={field}>languages: </span>
+                    {data.languages[Object.keys(data.languages)[0]]}
+                  </div>
+                </div>
 
-              <div className={fieldWraper}>
-                <span className={field}>borders: </span>
-              </div>
-              <div className={bordersStyle}>
-                {borders.map((border) => (
-                  <Link
-                    className={link}
-                    key={border}
-                    href={`./detail?&country_name=${bordersData[border]?.name?.common}`}
-                  >
-                    {bordersData[border]?.name?.common || 'Loading...'}
-                  </Link>
-                ))}
+                <div className={bordersWraper}>
+                  <div className={fieldWraper}>
+                    <span className={field}>borders: </span>
+                  </div>
+                  <div className={bordersStyle}>
+                    {borders.map((border) => (
+                      <Link
+                        className={link}
+                        key={border}
+                        href={`./detail?&country_name=${bordersData[border]?.name?.common}`}
+                      >
+                        <button>
+                          {' '}
+                          {bordersData[border]?.name?.common || 'Loading...'}
+                        </button>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
             </>
           )}

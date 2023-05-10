@@ -1,11 +1,15 @@
 .filterhWraper {
-  height: 3rem;
+  height: 100%;
   width: 100%;
-  max-width: 400px;
+  max-width: 960px;
+  max-height: 4rem;
+
   display: flex;
-  flex-direction: column;
   gap: 1.5rem;
+  padding: 0 2rem;
   align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .searchWraper {
@@ -41,11 +45,17 @@
 .select {
   width: 100%;
   padding: 0.5rem;
-  height: 2rem;
+  height: 100%;
   border: transparent;
   outline: transparent;
   background-color: var(--box);
   color: var(--primary-text);
   box-shadow: var(--nav-shadow);
   border-radius: 8px;
+}
+
+@media only screen and (max-width: 514px) {
+  .filterhWraper {
+    flex-direction: column;
+  }
 }

@@ -74,9 +74,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 2rem;
+  /* overflow: scroll; */
 }
 
-@media only screen and (min-width: 616px) {
+@media only screen and (min-width: 514px) {
   .cardGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -84,7 +86,7 @@ main {
   }
 }
 
-@media only screen and (min-width: 1047px) {
+@media only screen and (min-width: 768px) {
   .cardGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -92,7 +94,7 @@ main {
   }
 }
 
-@media only screen and (min-width: 1240px) {
+@media only screen and (min-width: 1024px) {
   .cardGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
