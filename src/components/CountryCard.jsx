@@ -19,7 +19,7 @@ export default function CountryCard({ country }) {
           <p>
             <span className={field}>population: </span>
             {Intl.NumberFormat('en', { notation: 'compact' }).format(
-              country.divpopulation
+              country.population
             )}
           </p>
           <p>
